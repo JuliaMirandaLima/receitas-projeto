@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Receita encontrada</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff8f0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .receita {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px #ccc;
+        }
+
+        .receita img {
+            display: block;
+            width: 400px;
+            max-width: 100%;
+            margin: 20px auto;
+            border-radius: 12px;
+        }
+
+        .ingredientes {
+            white-space: pre-line;
+        }
+
+        .preparo {
+            line-height: 1.6;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>🍴 Receita encontrada</h1>
+
+    <div th:if="${receita == null}">
+
+        <h2>😕 Receita não encontrada</h2>
+
+        <p>
+            Não encontramos uma receita para:
+            <strong th:text="${nomeBusca}"></strong>
+        </p>
+
+    </div>
+
+    <div class="receita" th:if="${receita != null}">
+
+        <h2 th:text="${receita.nome}"></h2>
+
+        <img th:src="${receita.imagem}"
+             alt="Imagem da receita">
+
+        <p>
+            <strong>Categoria:</strong>
+            <span th:text="${receita.categoria}"></span>
+        </p>
+
+        <p>
+            <strong>Origem:</strong>
+            <span th:text="${receita.origem}"></span>
+        </p>
+
+        <h3>🥕 Ingredientes</h3>
+
+        <p class="ingredientes"
+           th:text="${receita.ingredientes}">
+        </p>
+
+        <h3>👩‍🍳 Modo de preparo</h3>
+
+        <p class="preparo"
+           th:text="${receita.preparo}">
+        </p>
+
+    </div>
+
+    <a href="/">⬅ Voltar para o início</a>
+
+</body>
+
+</html>

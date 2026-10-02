@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Caderno de Receitas</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff8f0;
+            margin: 0;
+        }
+
+        header {
+            background-color: #e67e22;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .busca {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px #ccc;
+        }
+
+        input {
+            padding: 12px;
+            width: 60%;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #e67e22;
+            color: white;
+            cursor: pointer;
+        }
+
+        a {
+            color: #e67e22;
+            text-decoration: none;
+        }
+
+        .links {
+            margin-top: 25px;
+        }
+
+        .links a {
+            display: block;
+            margin: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <h1>🍴 Caderno de Receitas</h1>
+
+    <p>Encontre receitas e monte seu próprio caderno!</p>
+
+</header>
+
+<main>
+
+    <div class="busca">
+
+        <h2>🔎 Buscar uma receita</h2>
+
+        <p>
+            Pesquise receitas disponíveis na internet.
+        </p>
+
+        <form action="/buscar" method="get">
+
+            <input
+                type="text"
+                name="nome"
+                placeholder="Digite o nome da receita"
+                required>
+
+            <button type="submit">
+                Buscar
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="links">
+
+        <a href="/receitas/nova">
+            ➕ Cadastrar uma nova receita
+        </a>
+
+        <a href="/receitas">
+            📖 Ver minhas receitas
+        </a>
+
+    </div>
+
+</main>
+
+</body>
+
+</html>
